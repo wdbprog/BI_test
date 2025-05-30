@@ -52,3 +52,9 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# VS 2017+ .vs folder
+.vs/
+
+# Visual Studio Code workspace settings
+.vscode/
