@@ -1,6 +1,11 @@
-@bi_api_HostAddress = http://localhost:5177
+@bi_api_HostAddress = https://localhost:8080
 
-GET {{bi_api_HostAddress}}/weatherforecast/
+GET {{bi_api_HostAddress}}/calendar-events
+Accept: application/json
+
+###
+
+GET {{bi_api_HostAddress}}/calendar-events?take=3&language=en
 Accept: application/json
 
 ###
