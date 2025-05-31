@@ -7,7 +7,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 builder.Services.AddMemoryCache();
 
-
 //set up CORS for frontend
 var frontendUrl = builder.Configuration.GetValue<string>("frontendUrl");
 builder.Services.AddCors(options =>
@@ -62,7 +61,7 @@ app.MapGet("/calendar-events", async (
         var response = await client.GetAsync(uriBuilder.Uri);
         response.EnsureSuccessStatusCode();
 
-        //possible imporovement, could deserialize to a strongly typed object, but would require more changes if API output format changes
+        //possible improvement, could deserialize to a strongly typed object, but would require more changes if API output format changes
         var jsonString = await response.Content.ReadAsStringAsync();
         events = JsonNode.Parse(jsonString);
 
@@ -77,3 +76,5 @@ app.MapGet("/calendar-events", async (
 .WithOpenApi();
 
 app.Run();
+
+public partial class Program { }
